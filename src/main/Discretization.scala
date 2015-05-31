@@ -23,7 +23,7 @@ object Discretization {
       sigma <- process.sigma(t, process.x_t)
     } yield process.x_t.get + ( drift * dt ) + (sigma * dw) + 0.5*( drift * drift * (dw * dw - dt) )
 
-
+  
 // quadraticExponential is exclusively for CIR processes
   def varianceQuadraticExponential(processT: StochasticProcess, t: Time, dt: Time, dw: Double): Try[Double] = {
     val process = processT.asInstanceOf[CIR]
